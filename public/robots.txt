@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shamisen.app/sitemap-index.xml

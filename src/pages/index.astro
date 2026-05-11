@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="津軽三味線の譜面アプリ"
+  description="ShamiScore は津軽三味線の譜面を作成・管理できる iOS アプリです。稽古や演奏に使える譜面を、手軽に書き留めて整理できます。"
+  path="/"
+>
+  <section class="hero">
+    <div class="container hero__inner">
+      <img
+        src="/appicon.png"
+        alt="ShamiScore アプリアイコン"
+        class="hero__icon"
+        width="120"
+        height="120"
+      />
+      <h1>ShamiScore</h1>
+      <p class="hero__tagline">津軽三味線の譜面を、もっと手軽に。</p>
+      <p class="lead">
+        ShamiScore は、津軽三味線の譜面作成と管理をサポートする iOS アプリです。
+        日々の稽古や演奏のために、譜面を書き留めて整理し、いつでも見返せるようにします。
+      </p>
+      <p class="hero__status">
+        現在、App Store での公開に向けて準備を進めています。
+      </p>
+    </div>
+  </section>
+
+  <section class="features container">
+    <h2>このサイトについて</h2>
+    <p>
+      shamisen.app は ShamiScore の公式サイトです。アプリのサポート情報や、
+      利用規約・プライバシーポリシーを掲載しています。
+    </p>
+
+    <div class="cards">
+      <a class="card" href="/support">
+        <h3>サポート</h3>
+        <p>使い方・購入・不具合報告など、お問い合わせの窓口です。</p>
+      </a>
+      <a class="card" href="/terms">
+        <h3>利用規約</h3>
+        <p>ShamiScore をご利用いただく上での規約です。</p>
+      </a>
+      <a class="card" href="/privacy">
+        <h3>プライバシー</h3>
+        <p>個人情報の取り扱いについてご説明します。</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="contact container">
+    <h2>お問い合わせ</h2>
+    <p>
+      ご質問・ご要望は、メールで受け付けています。<br />
+      <a href="mailto:support@shamisen.app">support@shamisen.app</a>
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 4rem 0 3rem;
+    text-align: center;
+    background:
+      radial-gradient(
+        ellipse at top,
+        rgba(45, 91, 255, 0.08),
+        transparent 60%
+      );
+  }
+
+  .hero__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__icon {
+    border-radius: 22px;
+    box-shadow: 0 12px 30px -12px rgba(45, 91, 255, 0.4);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .hero__tagline {
+    font-size: 1.15rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin: 0 0 1.5rem;
+  }
+
+  .hero__status {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+
+  .features {
+    padding: 3rem 0 1rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .card {
+    display: block;
+    padding: 1.25rem 1.4rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    transition:
+      transform 0.15s ease,
+      border-color 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+
+  .card:hover {
+    text-decoration: none;
+    color: var(--color-text);
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -12px rgba(45, 91, 255, 0.3);
+  }
+
+  .card h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.05rem;
+    color: var(--color-accent);
+  }
+
+  .card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .contact {
+    padding: 2rem 0 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding: 2.5rem 0 2rem;
+    }
+    .hero h1 {
+      font-size: 1.9rem;
+    }
+    .hero__icon {
+      width: 96px;
+      height: 96px;
+    }
+  }
+</style>
