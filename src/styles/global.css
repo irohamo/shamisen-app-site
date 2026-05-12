@@ -116,18 +116,21 @@ img {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding-left: clamp(1.25rem, 5vw, 2rem);
+  padding-right: clamp(1.25rem, 5vw, 2rem);
 }
 
 .container-wide {
   width: 100%;
   max-width: var(--max-width-wide);
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding-left: clamp(1.25rem, 5vw, 2rem);
+  padding-right: clamp(1.25rem, 5vw, 2rem);
 }
 
 .page {
-  padding: 3rem 0 5rem;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
 }
 
 .legal h2 {
@@ -208,6 +211,7 @@ img {
   }
 
   .page {
-    padding: 2rem 0 4rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
   }
 }

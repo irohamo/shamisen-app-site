@@ -79,8 +79,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .hero__icon {
-    border-radius: 22px;
-    box-shadow: 0 12px 30px -12px rgba(45, 91, 255, 0.4);
+    /* PNG 自体の角丸を活かす。背景は透明 */
+    background: transparent;
+    filter: drop-shadow(0 12px 24px rgba(45, 91, 255, 0.35));
     margin-bottom: 1.5rem;
   }
 
@@ -103,7 +104,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .features {
-    padding: 3rem 0 1rem;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
   }
 
   .cards {
@@ -148,7 +150,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .contact {
-    padding: 2rem 0 1rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
   }
 
   @media (max-width: 640px) {
