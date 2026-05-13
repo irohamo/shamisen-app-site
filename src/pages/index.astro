@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="津軽三味線の譜面アプリ"
-  description="ShamiScore は津軽三味線の譜面を iPad で作成・管理できるアプリです。より速く、きれいに譜面を仕上げます。"
+  description="ShamiScore は津軽三味線の譜面を iPad で作成・管理できるアプリです。iPad 版は App Store で公開中、macOS 版は準備中です。"
   path="/"
 >
   <section class="hero">
@@ -19,7 +19,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h1>ShamiScore</h1>
       <p class="hero__tagline">より速く、きれいに。</p>
       <p class="lead">津軽三味線の譜面を iPad で作成。</p>
-      <p class="hero__status">App Store での公開に向けて準備中</p>
+      <div class="platforms" aria-label="アプリの入手方法">
+        <a
+          class="platform-card platform-card--available"
+          href="https://apps.apple.com/jp/app/shamiscore/id6767441963"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="platform-card__label">iPad 版</span>
+          <strong>App Store で公開中</strong>
+          <span>iPadでインストールできます</span>
+        </a>
+        <div class="platform-card platform-card--soon" aria-disabled="true">
+          <span class="platform-card__label">macOS 版</span>
+          <strong>準備中</strong>
+          <span>公開に向けて作業中です</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -92,10 +108,69 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin: 0 0 1.5rem;
   }
 
-  .hero__status {
+  .platforms {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    width: min(100%, 560px);
+    margin-top: 1rem;
+    text-align: left;
+  }
+
+  .platform-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 132px;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.82);
+    color: var(--color-text);
+  }
+
+  .platform-card:hover {
+    text-decoration: none;
+  }
+
+  .platform-card--available {
+    border-color: rgba(45, 91, 255, 0.45);
+    box-shadow: 0 12px 28px -22px rgba(45, 91, 255, 0.5);
+    transition:
+      transform 0.15s ease,
+      border-color 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+
+  .platform-card--available:hover {
+    color: var(--color-text);
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px -18px rgba(45, 91, 255, 0.55);
+  }
+
+  .platform-card--soon {
+    background: rgba(255, 255, 255, 0.48);
     color: var(--color-text-muted);
-    font-size: 0.95rem;
-    margin-top: 0.5rem;
+  }
+
+  .platform-card__label {
+    color: var(--color-text-muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin-bottom: 0.45rem;
+  }
+
+  .platform-card strong {
+    font-size: 1.05rem;
+    line-height: 1.45;
+    margin-bottom: 0.35rem;
+  }
+
+  .platform-card span:last-child {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
   }
 
   .features {
@@ -159,6 +234,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .hero__icon {
       width: 96px;
       height: 96px;
+    }
+    .platforms {
+      grid-template-columns: 1fr;
     }
   }
 </style>
